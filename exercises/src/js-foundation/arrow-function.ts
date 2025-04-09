@@ -18,7 +18,7 @@ const users: User[] = [
     }
 ]
 
-export const getUserById = (id: number, callback: Callback) =>{
+export const getUserById = (id: number, callback: Callback) => {
     const user = users.find((user) => user.id === id)
 
     user 
