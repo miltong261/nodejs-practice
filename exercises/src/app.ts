@@ -5,7 +5,7 @@
 console.log('---------------------------------------------------------------------------')
 console.log('1. Get email template')
 
-const { emailTemplate } = require('./js-foundation/template')
+import { emailTemplate } from "./js-foundation/template";
 console.log(emailTemplate)
 
 console.log('---------------------------------------------------------------------------')
@@ -32,7 +32,7 @@ console.log('-------------------------------------------------------------------
 /** --------------------------------------------------------------------------- */
 console.log('3. Callback')
 
-const { getUserById } = require('./js-foundation/callback')
+import { getUserById } from "./js-foundation/callback";
 
 const userId = 1
 
@@ -55,7 +55,7 @@ console.log('-------------------------------------------------------------------
 /** --------------------------------------------------------------------------- */
 console.log('4. Arrow function')
 
-const { getUserById: arrowGetUserById } = require('./js-foundation/arrow-function')
+import { getUserById as arrowGetUserById } from "./js-foundation/arrow-function";
 
 arrowGetUserById(userId, (error, user) => {
     if (error) {
@@ -76,8 +76,8 @@ console.log('-------------------------------------------------------------------
 /** --------------------------------------------------------------------------- */
 console.log('5. Factory functions')
 
-const { getUUID, getAge, buildLogger } = require('./plugins')
-const { buildMakePerson } = require('./js-foundation/factory-function')
+import { getUUID, getAge, buildLogger } from "./plugins";
+import { buildMakePerson } from "./js-foundation/factory-function";
 
 const makePerson = buildMakePerson({ getUUID, getAge })
 
@@ -101,10 +101,10 @@ console.log('-------------------------------------------------------------------
 /** --------------------------------------------------------------------------- */
 console.log('6. Promises')
 
-const { getPokemonById } = require('./js-foundation/promise')
+import { getPokemonNameById } from "./js-foundation/promise";
 
-getPokemonById(1)
-    .then((pokemon) => console.log({pokemon: pokemon.name}))
+getPokemonNameById(1)
+    .then((pokemon) => console.log({pokemon: pokemon}))
     .catch((error) => console.log(error))
     .finally(() => console.log('Finished'))
 
@@ -119,3 +119,4 @@ const logger = buildLogger('app.js')
 
 logger.log('Hello world')
 logger.error('Error message')
+
